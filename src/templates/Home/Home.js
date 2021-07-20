@@ -52,36 +52,35 @@ class Home extends Component {
 
     return (
       <div>
-        {!!searchValue && (
-          <p>Pesquisa: {searchValue}</p>
-        )}
-
-        <TextInput 
-          searchValue={ searchValue }
-          handleSearch={ this.handleSearch }
-        />
-
-        <div className="App">
-          {filteredPosts.length > 0 && (
-            filteredPosts.map(post => (
-              <PostCard obj={ post } key={ post.id } /> 
-              )) 
+        <div className="top">
+          {!!searchValue && (
+            <p>Você digitou: <h3>{searchValue}</h3></p>
           )}
 
-          {filteredPosts.length === 0 && (
-            <h2 className="warning">Post não encontrado</h2>
-          )}
-        </div>
-
-        <div>
+          <TextInput 
+            searchValue={ searchValue }
+            handleSearch={ this.handleSearch }
+          />
+          
           {!searchValue && (
             <Button 
               text="Carregar mais Posts" 
               onClick={this.loadMorePosts}
             /> 
           )}
-        </div>      
-          
+        </div> 
+         
+        {filteredPosts.length === 0 && (
+            <h2 className="warning">Post não encontrado</h2>
+        )}
+            
+        <div className="App">
+          {filteredPosts.length > 0 && (
+            filteredPosts.map(post => (
+              <PostCard obj={ post } key={ post.id } /> 
+              )) 
+          )}
+        </div>          
       </div>
     );
   }  

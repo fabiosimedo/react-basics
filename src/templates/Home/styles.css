@@ -8,26 +8,19 @@ h2.warning {
   color: tomato;
   background-color: yellow;
 }
-
-img {
-  width: 20rem;
-  border-radius: .2rem;
-
-}
-
 .divinha {
   margin: 0 auto;
   max-width: 90%;
 }
-
 .App {
   display: grid; 
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 3rem;
 }
-  
-.content {
-  background-color: tomato;
-  border-radius: .5rem;
-  box-shadow: 0 0 .6rem black;
+div.top {
+  display: flex;
+  justify-content: space-around;
+}
+h2.warning {
+  text-align: center;
 }
